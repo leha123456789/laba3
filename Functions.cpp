@@ -1,6 +1,6 @@
 #include "Function.h"
 using namespace std;
-void DataReading(Muz* arr,int &offside,string filename)
+void DataReading(Muz* arr,int &offside,char*filename)
 {	
 	ifstream f(filename);
 	int N=0;
@@ -73,12 +73,12 @@ void Search(Muz* d,int &offside)
 	d[_n].print();
 	}
 }
-void SaveData(Muz* d, int &offside, string filename)
+void SaveData(Muz* arr, int &offside, char*filename)
 {
 	ofstream of(filename);
 	of<<offside<<endl;
 	for(int i=0;i<offside;i++){
-	of<<d[i];
+	of<<arr[i];
 	}
 	of.close();
 	cout<<"Данные сохранены в файл"<<filename<<endl;

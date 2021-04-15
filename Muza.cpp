@@ -12,7 +12,7 @@ void Menu(){
 	<< "Ваш выбор:";
 	cin >> _stateMenu;
 }
-int main(){
+int main(int argc,char*argv[]){
 Muz ms;
 Menu();
 string filename;
@@ -25,7 +25,7 @@ while (_stateMenu !=0)
 	switch(_stateMenu)
 	{
 	case 1:
-			DataReading(arr,arr_offside, "f.txt");
+			DataReading(arr,arr_offside, argv[1]);
 		Menu();
 		break;
 	case 2:
@@ -41,7 +41,7 @@ while (_stateMenu !=0)
 		Menu();
 		break;
 	case 5:
-			SaveData(arr,arr_offside,"f.txt");
+			SaveData(arr,arr_offside,argv[1]);
 		Menu();
 		break;
 
