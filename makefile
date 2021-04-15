@@ -1,4 +1,4 @@
 comp:
-	gcc Main.c DeleteMusic.c NewMusic.c Poisk.c Read.c Redakt.c filevvod.c zapis.c -o Menu
+	g++ Muza.cpp Muz.cpp Functions.cpp -o Menu
 use:
 	./Menu
