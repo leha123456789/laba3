@@ -1,8 +1,8 @@
 #include "Function.h"
 using namespace std;
-void DataReading(Muz* arr,int &offside,char*file)
+void DataReading(Muz* arr,int &offside,string filename)
 {	
-	ifstream f(file);
+	ifstream f(filename);
 	int N=0;
 	f>>N;
 	offside=N;
@@ -17,7 +17,6 @@ void DataReading(Muz* arr,int &offside,char*file)
 	cout << "Данные считаны!" << endl;
 }
 f.close();
-cout<<file;
 }
 void DataChange(Muz* arr,int &offside)
 {
