@@ -83,7 +83,7 @@ void Func::SaveData(Muz* arr, int &offside, char*filename)
 	of.close();
 	cout<<"Данные сохранены в файл"<<filename<<endl;
 }
-void Func::DeleteData(Muz* arr, int &offside)
+void Func::DeleteData(Muz* arr, int &offside,char*filename)
 {
 	int _n;
 	arr[offside];
@@ -94,4 +94,11 @@ void Func::DeleteData(Muz* arr, int &offside)
 	arr[i]=arr[i+1];
 	}
 	offside--;
+	ofstream of(filename);
+	of<<offside<<endl;
+	for(int i=0;i<offside;i++){
+	of<<arr[i];
+	}
+	of.close();
+	cout<<"Данные сохранены в файл"<<filename<<endl;
 }

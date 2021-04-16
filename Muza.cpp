@@ -46,7 +46,7 @@ while (_stateMenu !=0)
 		Menu();
 		break;
 	case 6:
-			ns.DeleteData(arr,arr_offside);
+			ns.DeleteData(arr,arr_offside,argv[1]);
 		Menu();
 		break;
 
