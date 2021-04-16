@@ -1,6 +1,6 @@
 #include "Function.h"
 using namespace std;
-void DataReading(Muz* arr,int &offside,char*filename)
+void Func::DataReading(Muz* arr,int &offside,char*filename)
 {	
 	ifstream f(filename);
 	int N=0;
@@ -18,7 +18,7 @@ void DataReading(Muz* arr,int &offside,char*filename)
 }
 f.close();
 }
-void DataChange(Muz* arr,int &offside)
+void Func::DataChange(Muz* arr,int &offside)
 {
 	string album;
 	int year;
@@ -45,7 +45,7 @@ void DataChange(Muz* arr,int &offside)
 else
 	cout<<"Номер введен неверно!"<<endl;
 }
-void AddData(Muz* arr, int &offside)
+void Func::AddData(Muz* arr, int &offside)
 {
 	string album;
 	int year;
@@ -63,17 +63,17 @@ void AddData(Muz* arr, int &offside)
 	cout<<"Данные добавлены!"<<endl;
 	offside++;
 }
-void Search(Muz* d,int &offside)
+void Func::Search(Muz* arr,int &offside)
 {
 	int _n;
 	cout<<"Введите номер нужного элемента (от 1 до "<<offside<<"):"; 
 	cin>>_n;
 	_n--;
 	if (_n>=0 && _n<=offside){
-	d[_n].print();
+	arr[_n].print();
 	}
 }
-void SaveData(Muz* arr, int &offside, char*filename)
+void Func::SaveData(Muz* arr, int &offside, char*filename)
 {
 	ofstream of(filename);
 	of<<offside<<endl;
@@ -82,4 +82,16 @@ void SaveData(Muz* arr, int &offside, char*filename)
 	}
 	of.close();
 	cout<<"Данные сохранены в файл"<<filename<<endl;
+}
+void Func::DeleteData(Muz* arr, int &offside)
+{
+	int _n;
+	arr[offside];
+	cout<<"Введите номер нужного элемента (от 1 до "<<offside<<"):";
+	cin>>_n;
+	_n--;
+	for (int i=_n;i<offside;i++){
+	arr[i]=arr[i+1];
+	}
+	offside--;
 }
