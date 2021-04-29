@@ -3,6 +3,10 @@ using namespace std;
 void Func::DataReading(Muz* arr,int &offside,char*filename)
 {	
 	ifstream f(filename);
+	if (!f){
+	cout<<"error"<<endl;
+	}
+	else{
 	int N=0;
 	f>>N;
 	offside=N;
@@ -15,6 +19,7 @@ void Func::DataReading(Muz* arr,int &offside,char*filename)
 	arr[i].print();
 	}
 	cout << "Данные считаны!" << endl;
+}
 }
 f.close();
 }
@@ -75,6 +80,11 @@ void Func::Search(Muz* arr,int &offside)
 }
 void Func::SaveData(Muz* arr, int &offside, char*filename)
 {
+	ifstream f(filename);
+	if (!f){
+	cout<<"error"<<endl;
+	} 
+	else{
 	ofstream of(filename);
 	of<<offside<<endl;
 	for(int i=0;i<offside;i++){
@@ -83,10 +93,18 @@ void Func::SaveData(Muz* arr, int &offside, char*filename)
 	of.close();
 	cout<<"Данные сохранены в файл"<<filename<<endl;
 }
+f.close();
+}
 void Func::DeleteData(Muz* arr, int &offside,char*filename)
 {
 	int _n;
 	arr[offside];
+	ifstream f(filename);
+	if (!f){
+	cout<<"error"<<endl;
+	}
+	else{
+	ofstream of(filename);
 	cout<<"Введите номер нужного элемента (от 1 до "<<offside<<"):";
 	cin>>_n;
 	_n--;
@@ -94,11 +112,12 @@ void Func::DeleteData(Muz* arr, int &offside,char*filename)
 	arr[i]=arr[i+1];
 	}
 	offside--;
-	ofstream of(filename);
 	of<<offside<<endl;
 	for(int i=0;i<offside;i++){
 	of<<arr[i];
 	}
 	of.close();
 	cout<<"Данные сохранены в файл"<<filename<<endl;
+}
+f.close();
 }

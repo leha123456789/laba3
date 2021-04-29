@@ -23,8 +23,6 @@ int arr_offside=0;
 arr=new Muz[k];
 while (_stateMenu !=0)
 {
-	if (!argv[1])
-	cout<<"error"<<endl;
 	switch(_stateMenu)
 	{
 	case 1:
